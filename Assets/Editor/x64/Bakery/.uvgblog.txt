@@ -1,0 +1,142 @@
+2025-2-2
+Rendering UV GBuffer for TemplateScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Dylan\AppData\Local\Temp\frender" "uvpos_TemplateScene_LM0.lz4" 2 0 0 0
+Running ftrace sun "C:\Users\Dylan\AppData\Local\Temp\frender" "light_-2066981741_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0" 4 0 0 comp_0.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM00.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM01.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM02.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM03.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_final" 4 16 0 "gi_TemplateScene_LM04.bin" "TemplateScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Dylan\AppData\Local\Temp\frender" "0" "TemplateScene_LM0_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "F:/Projects/GTWShit/Assets/BakeryLightmaps/TemplateScene_LM0_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+Rendering UV GBuffer for TemplateScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Dylan\AppData\Local\Temp\frender" "uvpos_TemplateScene_LM0.lz4" 2 0 0 0
+Running ftrace skycubemap "C:\Users\Dylan\AppData\Local\Temp\frender" "light_-2033552870_0" 4 0 0 sky0.bin
+Running ftrace sun "C:\Users\Dylan\AppData\Local\Temp\frender" "light_705482426_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0" 4 0 0 comp_0.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM00.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM01.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM02.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM03.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_final" 4 16 0 "gi_TemplateScene_LM04.bin" "TemplateScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Dylan\AppData\Local\Temp\frender" "0" "TemplateScene_LM0_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "F:/Projects/GTWShit/Assets/BakeryLightmaps/TemplateScene_LM0_final.hdr" 1024
+Total cache size 268088448
+Total cache size after purge 268088448
+Total cache size 279517328
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for TemplateScene_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Dylan\AppData\Local\Temp\frender" "uvpos_TemplateScene_LM0.lz4" 2 0 0 0
+Running ftrace addmul "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0" 4 0 0 comp_0.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM00.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM01.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM02.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_diffuse" 4 16 0 "gi_TemplateScene_LM03.bin" "TemplateScene_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Dylan\AppData\Local\Temp\frender" "TemplateScene_LM0_final" 4 16 0 "gi_TemplateScene_LM04.bin" "TemplateScene_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\Dylan\AppData\Local\Temp\frender" "0" "TemplateScene_LM0_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Dylan\AppData\Local\Temp\frender/TemplateScene_LM0_final_HDR.lz4" "F:/Projects/GTWShit/Assets/BakeryLightmaps/TemplateScene_LM0_final.hdr" 1024
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916
+Total cache size 268407916
+Total cache size after purge 268407916

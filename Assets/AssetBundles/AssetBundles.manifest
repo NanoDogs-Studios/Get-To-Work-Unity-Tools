@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 3276730959
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: map.g2wmap
+      Dependencies: {}
+    Info_1:
+      Name: data.g2wmap
+      Dependencies: {}
