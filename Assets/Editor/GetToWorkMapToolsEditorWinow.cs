@@ -12,6 +12,11 @@ using System.IO;
 
 public class GetToWorkMapToolsEditorWinow : EditorWindow
 {
+    private string mapName = "Map Name";
+    private string mapAuthor = "Map Author";
+    private Vector3 spawnpointPos = Vector3.zero;
+    private Vector3 respawnTriggerPos = Vector3.zero;
+    static TextAsset dataasset;
 
     [MenuItem("Get To Work Tools/Map Tools/Map Tools Window")]
     public static void ShowWindow()
@@ -90,31 +95,28 @@ public class GetToWorkMapToolsEditorWinow : EditorWindow
         // Map-Metadata
         GUILayout.Label("Map Metadata");
 
-        string MapName = "Map Name";
-        string MapAuthor = "Map Author";
-
-        MapName = EditorGUILayout.TextField(MapName);
-        MapAuthor = EditorGUILayout.TextField(MapAuthor);
+        // Use EditorPrefs or Serialized Variables to retain values
+        mapName = EditorGUILayout.TextField("Map Name", mapName);
+        mapAuthor = EditorGUILayout.TextField("Map Author", mapAuthor);
 
         // Update metadata
-        MapData.Instance.SetData(MapName, MapAuthor);
+        MapData.Instance.SetData(mapName, mapAuthor);
 
         if (GUILayout.Button("Create Map Data"))
         {
-            TextAsset data = new TextAsset("\nMap Name: " + MapName + "\nMap Author: " + MapAuthor);
-            AssetDatabase.CreateAsset(data, "Assets/map.txt");
-            Debug.Log(AssetDatabase.GetAssetPath(data));
+            dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}");
+            AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/{mapName}.txt");
+            Debug.Log(AssetDatabase.GetAssetPath(dataasset));
             AssetDatabase.Refresh();
         }
-
-
 
         if (GUILayout.Button("Open Template Scene"))
         {
             Debug.Log("Open Template");
             EditorSceneManager.OpenScene("Assets/G2WTools/MapTools/TemplateScene.unity");
         }
-        Vector3 spawnpointPos = EditorGUILayout.Vector3Field("Spawnpoint Position", Vector3.zero);
+
+        spawnpointPos = EditorGUILayout.Vector3Field("Spawnpoint Position", spawnpointPos);
         if (GUILayout.Button("Create Spawnpoint"))
         {
             Debug.Log("Create Spawnpoint");
@@ -122,13 +124,13 @@ public class GetToWorkMapToolsEditorWinow : EditorWindow
             spawnPoint.transform.position = spawnpointPos;
             spawnPoint.name = "Spawnpoint"; // make sure it doesn't have "(Clone)" in the name
 
-            if(GameObject.Find("Map") != null)
+            if (GameObject.Find("Map") != null)
             {
                 spawnPoint.transform.parent = GameObject.Find("Map").transform;
             }
         }
 
-        Vector3 respawnTriggerPos = EditorGUILayout.Vector3Field("Respawn Trigger Position", Vector3.zero);
+        respawnTriggerPos = EditorGUILayout.Vector3Field("Respawn Trigger Position", respawnTriggerPos);
         if (GUILayout.Button("Create Respawn Trigger"))
         {
             Debug.Log("Create Respawn");

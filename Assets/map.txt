@@ -9,6 +9,6 @@ TextAsset:
   m_Name: map
   m_Script: '
 
-    Map Name: Map Name
+    Map Name: Yyk
 
-    Map Author: Map Author'
+    Map Author: Hello'
