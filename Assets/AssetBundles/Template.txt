@@ -6,7 +6,7 @@ TextAsset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: map
+  m_Name: Template
   m_Script: '
 
     Map Name: Template

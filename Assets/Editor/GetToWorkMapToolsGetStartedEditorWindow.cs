@@ -9,6 +9,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEditor.PackageManager;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 
 public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 {
@@ -17,6 +18,8 @@ public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 
     private Texture2D bannerImage;
     bool showWindow = false;
+
+    static TextAsset dataasset;
 
     [InitializeOnLoadMethod]
     [MenuItem("Get To Work Tools/Map Tools/Get Started")]
@@ -123,10 +126,9 @@ public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 
         if (GUILayout.Button("Create Map Data"))
         {
-
-            TextAsset data = new TextAsset("\nMap Name: " + mapName + "\nMap Author: " + mapAuthor);
-            AssetDatabase.CreateAsset(data, "Assets/map.txt");
-            Debug.Log(AssetDatabase.GetAssetPath(data));
+            dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}");
+            AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/{mapName}.txt");
+            Debug.Log(AssetDatabase.GetAssetPath(dataasset));
             AssetDatabase.Refresh();
         }
 
