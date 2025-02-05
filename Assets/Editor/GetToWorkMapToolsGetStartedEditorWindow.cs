@@ -12,6 +12,9 @@ using System.IO;
 
 public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 {
+    private string mapName = "Map Name";
+    private string mapAuthor = "Map Author";
+
     private Texture2D bannerImage;
     bool showWindow = false;
 
@@ -111,17 +114,17 @@ public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 
     void DoWindow(int unusedWindowID)
     {
-        string MapName = EditorGUILayout.TextField("Map Name");
-        string MapAuthor = EditorGUILayout.TextField("Map Author");
+        mapName = EditorGUILayout.TextField("Map Name", mapName);
+        mapAuthor = EditorGUILayout.TextField("Map Author", mapAuthor);
         this.Repaint();
 
         // Update metadata
-        MapData.Instance.SetData(MapName, MapAuthor);
+        MapData.Instance.SetData(mapName, mapAuthor);
 
         if (GUILayout.Button("Create Map Data"))
         {
 
-            TextAsset data = new TextAsset("\nMap Name: " + MapName + "\nMap Author: " + MapAuthor);
+            TextAsset data = new TextAsset("\nMap Name: " + mapName + "\nMap Author: " + mapAuthor);
             AssetDatabase.CreateAsset(data, "Assets/map.txt");
             Debug.Log(AssetDatabase.GetAssetPath(data));
             AssetDatabase.Refresh();
