@@ -21,20 +21,15 @@ public class GetToWorkMapToolsGetStartedEditorWinow : EditorWindow
 
     static TextAsset dataasset;
 
-    [InitializeOnLoadMethod]
     [MenuItem("Get To Work Tools/Map Tools/Get Started")]
     public static void ShowWindow()
     {
         const string k_ProjectOpened = "ProjectOpened";
 
-        if (!SessionState.GetBool(k_ProjectOpened, false) && EditorApplication.isPlayingOrWillChangePlaymode == false)
-        {
-            SessionState.SetBool(k_ProjectOpened, true);
 
-            GetToWorkMapToolsGetStartedEditorWinow window = GetWindow<GetToWorkMapToolsGetStartedEditorWinow>();
-            window.titleContent = new GUIContent("Getting Started (G2W MTools)");
-            window.Show();
-        }
+        GetToWorkMapToolsGetStartedEditorWinow window = GetWindow<GetToWorkMapToolsGetStartedEditorWinow>();
+        window.titleContent = new GUIContent("Getting Started (G2W MTools)");
+        window.Show();
     }
 
     private void OnEnable()
