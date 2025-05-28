@@ -20,11 +20,11 @@ namespace Nanodogs.GetToWork.MapTools
 
         static TextAsset dataasset;
 
-        [MenuItem("Get To Work Tools/Map Tools/Get Started")]
+        [MenuItem("Get To Work Tools/Map Tools/Get Started", priority = 5)]
         public static void ShowWindow()
         {
             GetToWorkMapToolsGetStartedEditorWinow window = GetWindow<GetToWorkMapToolsGetStartedEditorWinow>();
-            window.titleContent = new GUIContent("Getting Started (G2W MTools)");
+            window.titleContent = new GUIContent("Getting Started (G2W Map Tools)");
             window.Show();
         }
 
@@ -41,6 +41,13 @@ namespace Nanodogs.GetToWork.MapTools
             GUIStyle centered = new GUIStyle(GUI.skin.label)
             {
                 alignment = TextAnchor.MiddleCenter,
+            };
+
+            GUIStyle centeredlink = new GUIStyle(GUI.skin.label)
+            {
+                alignment = TextAnchor.MiddleCenter,
+                fontStyle = FontStyle.Bold,
+                hover = { textColor = Color.blue },
             };
 
             GUIStyle centeredButtonBig = new GUIStyle(GUI.skin.button)
@@ -107,8 +114,14 @@ namespace Nanodogs.GetToWork.MapTools
             if (showWindow)
             {
                 BeginWindows();
-                GUILayout.Window(0, new Rect(0, 0, 200, 200), DoWindow, "Map Data");
+                GUILayout.Window(0, new Rect(0, 0, 400, 200), DoWindow, "Map Data");
                 EndWindows();
+            }
+
+            GUILayout.Label("Having issues or have a question?", centered);
+            if (GUILayout.Button("Make a Github Issue", centeredlink, GUILayout.Height(20), GUILayout.ExpandWidth(true)))
+            {
+                Application.OpenURL("https://github.com/NanoDogs-Studios/Get-To-Work-Unity-Tools/issues/new");
             }
         }
 
@@ -121,9 +134,14 @@ namespace Nanodogs.GetToWork.MapTools
             // Update metadata
             MapData.Instance.SetData(mapName, mapAuthor);
 
-            if (GUILayout.Button("Create Map Data"))
+            if (GUILayout.Button("Create Map Data (.txt)"))
             {
-                dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}");
+                if (string.IsNullOrEmpty(mapName) || string.IsNullOrEmpty(mapAuthor))
+                {
+                    EditorUtility.DisplayDialog("Error", "Please enter both Map Name and Map Author.", "OK");
+                    return;
+                }
+                dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}\n");
                 AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/{mapName}.txt");
                 Debug.Log(AssetDatabase.GetAssetPath(dataasset));
                 AssetDatabase.Refresh();

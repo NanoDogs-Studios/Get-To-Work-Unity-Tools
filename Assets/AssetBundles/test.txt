@@ -11,4 +11,4 @@ TextAsset:
 
     Map Name: test
 
-    Map Author: laym'
+    Map Author: test'

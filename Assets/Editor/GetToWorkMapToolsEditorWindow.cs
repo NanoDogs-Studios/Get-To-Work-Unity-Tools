@@ -19,7 +19,7 @@ namespace Nanodogs.GetToWork.MapTools
         private Vector3 respawnTriggerPos = Vector3.zero;
         static TextAsset dataasset;
 
-        [MenuItem("Get To Work Tools/Map Tools/Map Tools Window")]
+        [MenuItem("Get To Work Tools/Map Tools/Map Tools", priority = 100)]
         public static void ShowWindow()
         {
             GetToWorkMapToolsEditorWindow window = GetWindow<GetToWorkMapToolsEditorWindow>();
@@ -144,6 +144,8 @@ namespace Nanodogs.GetToWork.MapTools
                     Respawn.transform.parent = GameObject.Find("Map").transform;
                 }
             }
+
+            EditorGUILayout.HelpBox("Made with ❤️ by LaymGlitched", MessageType.Info);
         }
     }
 
