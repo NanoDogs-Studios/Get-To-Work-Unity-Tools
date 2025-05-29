@@ -19,12 +19,22 @@ namespace Nanodogs.GetToWork.MapTools
         private Vector3 respawnTriggerPos = Vector3.zero;
         static TextAsset dataasset;
 
+        public static Vector3 GizmosSpawnPointPos = Vector3.zero;
+        public static Vector3 GizmosRespawnTriggerPos = Vector3.zero;
+        public static bool IsWindowOpen = false;
+
+
         [MenuItem("Get To Work Tools/Map Tools/Map Tools", priority = 100)]
         public static void ShowWindow()
         {
             GetToWorkMapToolsEditorWindow window = GetWindow<GetToWorkMapToolsEditorWindow>();
             window.titleContent = new GUIContent("Get To Work Map Tools");
+            IsWindowOpen = true;
             window.Show();
+        }
+        private void OnDisable()
+        {
+            IsWindowOpen = false;
         }
 
         [MenuItem("Get To Work Tools/Map Tools/Build Asset Bundles")]
@@ -93,31 +103,14 @@ namespace Nanodogs.GetToWork.MapTools
         {
             GUILayout.Label("Map Tools", EditorStyles.boldLabel);
 
-            // Map-Metadata
-            GUILayout.Label("Map Metadata");
-
-            // Use EditorPrefs or Serialized Variables to retain values
-            mapName = EditorGUILayout.TextField("Map Name", mapName);
-            mapAuthor = EditorGUILayout.TextField("Map Author", mapAuthor);
-
-            // Update metadata
-            MapData.Instance.SetData(mapName, mapAuthor);
-
-            if (GUILayout.Button("Create Map Data"))
-            {
-                dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}");
-                AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/{mapName}.txt");
-                Debug.Log(AssetDatabase.GetAssetPath(dataasset));
-                AssetDatabase.Refresh();
-            }
-
             if (GUILayout.Button("Open Template Scene"))
             {
                 Debug.Log("Open Template");
                 EditorSceneManager.OpenScene("Assets/G2WTools/MapTools/TemplateScene.unity");
             }
 
-            spawnpointPos = EditorGUILayout.Vector3Field("Spawnpoint Position", spawnpointPos);
+            spawnpointPos = EditorGUILayout.Vector3Field("Spawnpoint Position", GizmosSpawnPointPos);
+            GizmosSpawnPointPos = spawnpointPos;
             if (GUILayout.Button("Create Spawnpoint"))
             {
                 Debug.Log("Create Spawnpoint");
@@ -131,7 +124,8 @@ namespace Nanodogs.GetToWork.MapTools
                 }
             }
 
-            respawnTriggerPos = EditorGUILayout.Vector3Field("Respawn Trigger Position", respawnTriggerPos);
+            respawnTriggerPos = EditorGUILayout.Vector3Field("Respawn Trigger Position", GizmosRespawnTriggerPos);
+            GizmosRespawnTriggerPos = respawnTriggerPos;
             if (GUILayout.Button("Create Respawn Trigger"))
             {
                 Debug.Log("Create Respawn");

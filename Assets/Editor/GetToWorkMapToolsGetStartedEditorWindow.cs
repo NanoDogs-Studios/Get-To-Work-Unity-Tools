@@ -142,7 +142,7 @@ namespace Nanodogs.GetToWork.MapTools
                     return;
                 }
                 dataasset = new TextAsset($"\nMap Name: {mapName}\nMap Author: {mapAuthor}\n");
-                AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/{mapName}.txt");
+                AssetDatabase.CreateAsset(dataasset, $"Assets/AssetBundles/map.txt");
                 Debug.Log(AssetDatabase.GetAssetPath(dataasset));
                 AssetDatabase.Refresh();
             }
