@@ -9,6 +9,6 @@ Follow the steps on the getting started window that opens up to get you on your 
 # Tags
 Tags help to identify which object has different properties. we cant add our own tags, as they aren't implemented in the game.
 below is the current updated list of all tags and their functionality:
-GameController - Low Gravity Zone
-Finish - Respawn Trigger
-Respawn - Spawnpoint 
+* GameController - Low Gravity Zone
+* Finish - Respawn Trigger
+* Respawn - Spawnpoint 
