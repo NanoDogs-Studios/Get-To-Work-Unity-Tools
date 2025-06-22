@@ -3,7 +3,7 @@ Get To Work Map Tools allows you to create your own map!
 
 # Getting Started
 First of all, you need to download the Unity Package from the releases tab
-Create a new Universal 3D Unity Project with the version: 6000.0.35f1 ([unityhub://6000.0.35f1/9a3bc604008a](magnet link))
+Create a new Universal 3D Unity Project with the version: 6000.0.35f1 ([magnet link](unityhub://6000.0.35f1/9a3bc604008a))
 Next import the package by dragging the .unitypackage you downloaded into your "Project" Window at the bottom of your screen (Make sure you drag into the empty space)
 Follow the steps on the getting started window that opens up to get you on your feet.
 # Tags
